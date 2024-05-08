@@ -109,14 +109,6 @@ sudo rm -rf /var/lib/postgresql/
 tomt@tomt-virtual-machine:~$ sudo -S su - postgres
 [sudo] password for tomt:
 postgres@tomt-virtual-machine:~$ psql
-psql (14.11 (Ubuntu 14.11-0ubuntu0.22.04.1))
-Type "help" for help.
-
-postgres=# SELECT 1;
- ?column?
-----------
-        1
-(1 row)
 
 Решил её путем invok'a из оболочки и прописывая с задержкой команды в несколько секунд, чтобы не застрять в каком либо псевдоконсоли.
 
