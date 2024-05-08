@@ -72,43 +72,53 @@
 > Основной вариант, как можно удалить все зависимости и все, что связано с PostgreSql
 > sudo apt-get --purge remove postgresql\* && sudo apt-get autoremove
 
-Или можно попробовать выбрано отобрать и удалить пакеты по очередно
-Остановка службы PostgreSQL, если она запущена
-sudo systemctl stop postgresql
+> Или можно попробовать выбрано отобрать и удалить пакеты по очередно
+Остановка службы PostgreSQL, если она запущена 
+
+`sudo systemctl stop postgresql`
 
 Отключение/включение автозапуска службы PostgreSQL при загрузке
-sudo systemctl disable/enable postgresql
+
+`sudo systemctl disable/enable postgresql`
 
 Удаление всех файлов данных PostgreSQL
-sudo rm -r /var/lib/postgresql/
+
+`sudo rm -r /var/lib/postgresql/`
 
 Удаление пользователя postgres и его домашнего каталога
-sudo userdel -r postgres
+
+`sudo userdel -r postgres`
 
 Удаление всех файлов конфигурации PostgreSQL
-sudo rm -r /etc/postgresql/
+
+`sudo rm -r /etc/postgresql/`
 
 Удаление всех файлов журналов PostgreSQL
-sudo rm -r /var/log/postgresql/
+
+`sudo rm -r /var/log/postgresql/`
 
 Удаление всех файлов документации PostgreSQL
-sudo rm -r /usr/share/doc/postgresql/
+
+`sudo rm -r /usr/share/doc/postgresql/`
 
 Удаление всех файлов дампов баз данных PostgreSQL
-sudo rm -r /var/lib/postgresql/backups/
+
+`sudo rm -r /var/lib/postgresql/backups/`
 
 Удаление всех оставшихся файлов конфигурации PostgreSQL из каталога /etc/
-sudo apt-get autoremove --purge
+
+`sudo apt-get autoremove --purge`
 
 Наконец, удаление всех файлов, связанных с PostgreSQL из каталога /var/lib/postgresql/
-sudo rm -rf /var/lib/postgresql/
+
+`sudo rm -rf /var/lib/postgresql/`
 
 **Повстречался с проблемой, связанной в погружение из одного терминала в другой/псевдотерминал**
 А именно на таком примере:
 
-tomt@tomt-virtual-machine:~$ sudo -S su - postgres
-[sudo] password for tomt:
-postgres@tomt-virtual-machine:~$ psql
+`tomt@tomt-virtual-machine:~$ sudo -S su - postgres`
+`[sudo] password for tomt:`
+`postgres@tomt-virtual-machine:~$ psql`
 
 Решил её путем invok'a из оболочки и прописывая с задержкой команды в несколько секунд, чтобы не застрять в каком либо псевдоконсоли.
 
