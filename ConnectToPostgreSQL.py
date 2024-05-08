@@ -8,7 +8,7 @@ dbname=input()
 print("host-ip of Database:")
 ip=input()
 print("port:")
-ip=input()
+port=input()
 try:
         connection = psycopg2.connect(
             dbname=dbname,
