@@ -73,7 +73,7 @@ try:
         # Запуск Псевдотерминала psql
     while i<len(list_commands)-3:
         # Выполняем команду на удаленном устройстве
-        print(i, "- команда в ubuntu")
+        print(i+1, "- команда")
         print(list_commands[i]) 
         #if exec_command=='exit': 
         #    client.close()
