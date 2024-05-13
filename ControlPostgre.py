@@ -1,6 +1,10 @@
 import paramiko #pip install paramiko
 import psycopg2 #pip install psycopg2
-import time
+import time # Импорт модуля time для расчета времени выполнения команды 
+import os # Импорт модуля os для переменных окружения
+from dotenv import load_dotenv, dotenv_values #pip install python-dotenv
+# загрузка значений из .env файла
+load_dotenv()
 
 def run_psql(ssh_client):
     # Вызываем psql и отправляем команду
@@ -33,12 +37,9 @@ def replace_part_of_text(array, old_part, new_part):
     return array
 
 try:
-    print("Введите ip:")
-    ip=str(input())
-    print("Введите пользователя:")
-    us=str(input())
-    print("Введите пароль:")
-    password=str(input())
+    ip=os.getenv("IP")
+    us=os.getenv("USER_COMP")
+    password=os.getenv("PASS_COMP")
     # Создаем клиент SSH
     client = paramiko.SSHClient()
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())

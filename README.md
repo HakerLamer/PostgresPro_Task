@@ -73,6 +73,7 @@
 > sudo apt-get --purge remove postgresql\* && sudo apt-get autoremove
 
 > Или можно попробовать выбрано отобрать и удалить пакеты по очередно
+
 Остановка службы PostgreSQL, если она запущена 
 
 `sudo systemctl stop postgresql`
