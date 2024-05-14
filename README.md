@@ -66,7 +66,7 @@
 
 Пример скрипта для **PostgreSql** по созданию пользователя:
 ```sql
-CREATE ROLE test_user;
+CREATE ROLE test_user WITH PASSWORD 'password';
 CREATE DATABASE test;
 GRANT ALL PRIVILEGES ON DATABASE test to test_user;
 ```
