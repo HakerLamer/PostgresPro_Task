@@ -43,10 +43,8 @@ try:
     # Создаем клиент SSH
     client = paramiko.SSHClient()
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    # Загружаем SSH-ключ (Для Windows)
-    private_key = paramiko.RSAKey.from_private_key_file("C:\\Users\\egors\\.ssh\\id_rsa")
-    # Загружаем SSH-ключ (Для Mac OS и других Unix систем)
-    #private_key = paramiko.RSAKey.from_private_key_file("/Users/egors/.ssh/id_rsa")
+    # Загружаем SSH-ключ
+    private_key = paramiko.RSAKey.from_private_key_file(PATH_KEY)
     # Подключаемся к удаленному устройству
     client.connect(ip, username=us, pkey=private_key)
     print(f"Подключение успешно установлено: {client.get_transport().is_active()}")
